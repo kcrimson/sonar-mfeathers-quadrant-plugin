@@ -2,13 +2,6 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.codehaus.sonar-plugins</groupId>
-		<artifactId>parent</artifactId>
-		<version>17</version>
-		<relativePath />
-	</parent>
-
 	<groupId>pl.symentis.sonar</groupId>
 	<artifactId>sonar-mfeathers-quadrant-plugin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -20,7 +13,7 @@
 		<system>Jenkins</system>
 		<url>https://primitive.ci.cloudbees.com/job/sonar-mfeathers-quadrant-plugin/</url>
 	</ciManagement>
-	
+
 	<inceptionYear>2013</inceptionYear>
 
 	<organization>
@@ -84,6 +77,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
@@ -92,8 +86,13 @@
 			<plugin>
 				<groupId>org.codehaus.sonar</groupId>
 				<artifactId>sonar-packaging-maven-plugin</artifactId>
+				<version>1.6</version>
+				<extensions>true</extensions>
 				<configuration>
 					<useChildFirstClassLoader>true</useChildFirstClassLoader>
+					<pluginDescription>Some plugin</pluginDescription>
+					<pluginName>${sonar.pluginName}</pluginName>
+					<pluginClass>${sonar.pluginClass}</pluginClass>
 				</configuration>
 			</plugin>
 		</plugins>
