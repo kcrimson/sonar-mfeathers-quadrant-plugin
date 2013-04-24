@@ -28,9 +28,9 @@
 	</organization>
 
 	<scm>
-		<connection>scm:git:git@github.com:SonarCommunity/sonar-scm-stats</connection>
-		<developerConnection>scm:git:git@github.com:SonarCommunity/sonar-scm-stats</developerConnection>
-		<url>https://github.com/SonarCommunity/sonar-scm-stats</url>
+		<connection>scm:git:git@github.com:kcrimson/sonar-mfeathers-quadrant-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com:kcrimson/sonar-mfeathers-quadrant-plugin.git</developerConnection>
+		<url>https://github.com/kcrimson/sonar-mfeathers-quadrant-plugin.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
