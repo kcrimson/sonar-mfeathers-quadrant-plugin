@@ -28,7 +28,7 @@
 	</scm>
 
 	<properties>
-		<sonar.minversion>3.0</sonar.minversion>
+		<sonar.minversion>3.6</sonar.minversion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.scm.version>1.8</maven.scm.version>
 		<sonar.pluginName>Michael Feathers Quadrant</sonar.pluginName>
