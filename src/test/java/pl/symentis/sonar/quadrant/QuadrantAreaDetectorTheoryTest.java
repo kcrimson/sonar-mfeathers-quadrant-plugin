@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 
 @RunWith(Theories.class)
-public class QuadrantAreaDetectorTheory {
+public class QuadrantAreaDetectorTheoryTest {
 
   @DataPoint
   public static FileID simpleFileRarelyChangedWronglyNamed = new FileID("complexButRarelyChangedFile");
