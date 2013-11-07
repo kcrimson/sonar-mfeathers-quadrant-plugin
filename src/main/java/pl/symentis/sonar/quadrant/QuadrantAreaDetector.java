@@ -15,6 +15,14 @@ public class QuadrantAreaDetector {
 	}
 
 	public Quadrant detectAreaFor(FileID fileID) {
+
+    ChangeRate changeRate = metricsDataSource.getChangeRateFor(fileID);
+    ComplexityRange complexityRange = metricsDataSource.getComplexityFor(fileID);
+    
+    if(complexityRange instanceof LowComplexityRange && changeRate instanceof RarelyChanged){
+      return Quadrant.tools;
+    }
+
 		if (fileID.toString().equals("rarelyChangedAndSimpleFile"))
 			return Quadrant.tools;
 		else if (fileID.toString().equals("oftenChangedSimpleFile"))

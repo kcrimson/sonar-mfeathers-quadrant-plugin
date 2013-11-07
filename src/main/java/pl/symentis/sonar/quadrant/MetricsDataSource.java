@@ -13,4 +13,9 @@ public class MetricsDataSource {
     return null;
   }
 
+  public ChangeRate getChangeRateFor(FileID accused) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
 }

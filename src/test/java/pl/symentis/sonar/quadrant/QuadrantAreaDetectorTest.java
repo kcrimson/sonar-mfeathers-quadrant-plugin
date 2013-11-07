@@ -101,8 +101,7 @@ public class QuadrantAreaDetectorTest {
 		Quadrant quadrant = detector.detectAreaFor(fileId);
 
     // then
-		assertNotNull(quadrant);
-		
+    assertNotNull(quadrant);
 	}
 	
   @Test
