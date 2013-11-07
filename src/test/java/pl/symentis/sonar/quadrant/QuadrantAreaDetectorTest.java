@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.when;
 
 import org.apache.commons.lang.RandomStringUtils;
 import org.junit.Before;
@@ -109,6 +110,8 @@ public class QuadrantAreaDetectorTest {
     // given
     // 5 has no meaning here
     FileID randomFileId = new FileID(RandomStringUtils.random(5));
+
+    when(metricsDataSource.getComplexityFor(randomFileId)).thenReturn(new ComplexityRange());
 
     // when
     Quadrant quadrant = detector.detectAreaFor(randomFileId);
