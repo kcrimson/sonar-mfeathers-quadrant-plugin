@@ -8,12 +8,9 @@ package pl.symentis.sonar.quadrant;
  */
 public class QuadrantAreaDetector {
 
-	private MetricsDataSource metricsDataSource;
+	private final MetricsDataSource metricsDataSource;
 
-	public QuadrantAreaDetector(int i, int j) {
-	}
-
-	public QuadrantAreaDetector(int i, int j, MetricsDataSource metricsSource) {
+  public QuadrantAreaDetector(MetricsDataSource metricsSource) {
 		this.metricsDataSource = metricsSource;
 	}
 
@@ -24,7 +21,11 @@ public class QuadrantAreaDetector {
 			return Quadrant.breedinggrounds;
 		else if (fileID.toString().equals("complexButRarelyChangedFile"))
 			return Quadrant.uglystables;
-		else
+    else {
+      ComplexityRange cmxRng = metricsDataSource.getComplexityFor(fileID);
+      if (cmxRng != null) return null;
+    }
+
 			return Quadrant.designflaw;
 	}
 

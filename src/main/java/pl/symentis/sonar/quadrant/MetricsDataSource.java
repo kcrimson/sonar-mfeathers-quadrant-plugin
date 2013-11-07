@@ -8,4 +8,9 @@ package pl.symentis.sonar.quadrant;
  */
 public class MetricsDataSource {
 
+  public ComplexityRange getComplexityFor(FileID fileID) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
 }
