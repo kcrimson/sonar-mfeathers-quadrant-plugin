@@ -19,22 +19,11 @@ public class QuadrantAreaDetector {
     ChangeRate changeRate = metricsDataSource.getChangeRateFor(fileID);
     ComplexityRange complexityRange = metricsDataSource.getComplexityFor(fileID);
     
-    if(complexityRange instanceof LowComplexityRange && changeRate instanceof RarelyChanged){
-      return Quadrant.tools;
+    if (complexityRange instanceof LowComplexityRange) {
+      return (changeRate instanceof RarelyChanged) ? Quadrant.tools : Quadrant.breedinggrounds;
+    } else {
+      return (changeRate instanceof FrequentlyChanged) ? Quadrant.designflaw : Quadrant.uglystables;
     }
-
-		if (fileID.toString().equals("rarelyChangedAndSimpleFile"))
-			return Quadrant.tools;
-		else if (fileID.toString().equals("oftenChangedSimpleFile"))
-			return Quadrant.breedinggrounds;
-		else if (fileID.toString().equals("complexButRarelyChangedFile"))
-			return Quadrant.uglystables;
-    else {
-      ComplexityRange cmxRng = metricsDataSource.getComplexityFor(fileID);
-      if (cmxRng != null) return null;
-    }
-
-			return Quadrant.designflaw;
 	}
 
 	public boolean canWork() {

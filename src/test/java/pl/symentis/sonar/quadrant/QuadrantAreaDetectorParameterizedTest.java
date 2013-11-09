@@ -24,13 +24,13 @@ public class QuadrantAreaDetectorParameterizedTest {
   private final ChangeRate changeRate;
   private final Quadrant expectedQuadrant;
 
-  @Parameters(name = "File {0}, complex: {1}, changed: {2} => quadrant: {3}. Set # {index}")
+  @Parameters(name = "Misleading name {0}, complex: {1}, changed: {2} => quadrant: {3}. Set # {index}")
   public static Collection<Object[]> inputs() {
     Object[][] data = {
-        { new FileID("rarelyChangedAndSimpleFile"), new LowComplexityRange(), new RarelyChanged(), tools },
-        { new FileID("oftenChangedSimpleFile"), new LowComplexityRange(), new FrequentlyChanged(), breedinggrounds },
-        { new FileID("fileWithDesignFlaw"), new HighComplexityRange(), new FrequentlyChanged(), designflaw },
-        { new FileID("oftenChangedComplexFile"), new HighComplexityRange(), new RarelyChanged(), uglystables }
+        { new FileID("fileWithDesignFlaw"), new LowComplexityRange(), new RarelyChanged(), tools },
+        { new FileID("oftenChangedComplexFile"), new LowComplexityRange(), new FrequentlyChanged(), breedinggrounds },
+        { new FileID("rarelyChangedAndSimpleFile"), new HighComplexityRange(), new FrequentlyChanged(), designflaw },
+        { new FileID("oftenChangedSimpleFile"), new HighComplexityRange(), new RarelyChanged(), uglystables }
  };
     return Arrays.asList(data);
   }
