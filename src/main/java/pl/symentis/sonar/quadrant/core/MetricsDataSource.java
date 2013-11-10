@@ -1,4 +1,8 @@
-package pl.symentis.sonar.quadrant;
+package pl.symentis.sonar.quadrant.core;
+
+import pl.symentis.sonar.quadrant.api.FileID;
+import pl.symentis.sonar.quadrant.api.criteria.ChangeRate;
+import pl.symentis.sonar.quadrant.api.criteria.ComplexityRange;
 
 /**
  * 
@@ -9,12 +13,10 @@ package pl.symentis.sonar.quadrant;
 public class MetricsDataSource {
 
   public ComplexityRange getComplexityFor(FileID fileID) {
-    // TODO Auto-generated method stub
     return null;
   }
 
   public ChangeRate getChangeRateFor(FileID accused) {
-    // TODO Auto-generated method stub
     return null;
   }
 

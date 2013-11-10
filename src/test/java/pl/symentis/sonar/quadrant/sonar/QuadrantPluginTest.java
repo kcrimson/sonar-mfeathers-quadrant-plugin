@@ -1,4 +1,4 @@
-package pl.symentis.sonar.quadrant;
+package pl.symentis.sonar.quadrant.sonar;
 
 import static org.junit.Assert.assertNull;
 
@@ -7,6 +7,7 @@ import java.util.List;
 import org.junit.Test;
 
 /**
+ * Tests here verify that our code meets Sonar requirements for plug-ins.
  * 
  * @author Jaroslaw Palka <jaroslaw.palka@symentis.pl>
  * @author Tomasz Borek <tomasz.borek@gmail.com>

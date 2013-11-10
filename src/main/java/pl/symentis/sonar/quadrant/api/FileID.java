@@ -1,6 +1,7 @@
-package pl.symentis.sonar.quadrant;
+package pl.symentis.sonar.quadrant.api;
 
 /**
+ * Dummy pointer to unique file. Little to no logic is expected here.
  * 
  * @author Jaroslaw Palka <jaroslaw.palka@symentis.pl>
  * @author Tomasz Borek <tomasz.borek@gmail.com>
@@ -8,7 +9,7 @@ package pl.symentis.sonar.quadrant;
  */
 public class FileID {
 
-	private String name;
+	private final String name;
 
 	public FileID(String name) {
 		this.name = name;

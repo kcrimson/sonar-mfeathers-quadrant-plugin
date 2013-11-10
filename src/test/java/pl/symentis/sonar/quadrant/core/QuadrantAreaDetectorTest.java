@@ -1,4 +1,4 @@
-package pl.symentis.sonar.quadrant;
+package pl.symentis.sonar.quadrant.core;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -10,6 +10,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import pl.symentis.sonar.quadrant.api.FileID;
+import pl.symentis.sonar.quadrant.api.Quadrant;
+import pl.symentis.sonar.quadrant.core.MetricsDataSource;
+
 /**
  * 
  * @author Jaroslaw Palka <jaroslaw.palka@symentis.pl>
@@ -19,7 +23,7 @@ import org.mockito.MockitoAnnotations;
 public class QuadrantAreaDetectorTest {
 
   @InjectMocks
-	private QuadrantAreaDetector detector;
+	private OldQuadrantAreaDetector detector;
 
   @Mock
   private MetricsDataSource metricsDataSource;
@@ -38,7 +42,7 @@ public class QuadrantAreaDetectorTest {
 	public void shouldNotBeAbleToGetDataWhenMetricsDataSourceCantWork() {
 		// given
 		MetricsDataSource noMetricsSource = null;
-    detector = new QuadrantAreaDetector(noMetricsSource);
+    detector = new OldQuadrantAreaDetector(noMetricsSource);
 		// when - then
 		assertFalse("MetricsDataSource is up, but should be down", detector.canWork());
 	}
@@ -49,7 +53,7 @@ public class QuadrantAreaDetectorTest {
 		FileID fileId = new FileID("complexButRarelyChangedFile"); // values or exception
 		
     // when
-		Quadrant quadrant = detector.detectAreaFor(fileId);
+		Quadrant quadrant = detector.detect(fileId);
 
     // then
     assertNotNull(quadrant);

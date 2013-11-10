@@ -1,4 +1,4 @@
-package pl.symentis.sonar.quadrant;
+package pl.symentis.sonar.quadrant.sonar;
 
 import java.util.List;
 

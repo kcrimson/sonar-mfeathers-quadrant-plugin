@@ -1,11 +1,11 @@
-package pl.symentis.sonar.quadrant;
+package pl.symentis.sonar.quadrant.core;
 
 import static org.fest.assertions.Assertions.assertThat;
 import static org.mockito.Mockito.when;
-import static pl.symentis.sonar.quadrant.Quadrant.breedinggrounds;
-import static pl.symentis.sonar.quadrant.Quadrant.designflaw;
-import static pl.symentis.sonar.quadrant.Quadrant.tools;
-import static pl.symentis.sonar.quadrant.Quadrant.uglystables;
+import static pl.symentis.sonar.quadrant.api.Quadrant.breedinggrounds;
+import static pl.symentis.sonar.quadrant.api.Quadrant.designflaw;
+import static pl.symentis.sonar.quadrant.api.Quadrant.tools;
+import static pl.symentis.sonar.quadrant.api.Quadrant.uglystables;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -15,6 +15,16 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.mockito.Mockito;
+
+import pl.symentis.sonar.quadrant.api.FileID;
+import pl.symentis.sonar.quadrant.api.Quadrant;
+import pl.symentis.sonar.quadrant.api.criteria.ChangeRate;
+import pl.symentis.sonar.quadrant.api.criteria.ComplexityRange;
+import pl.symentis.sonar.quadrant.api.criteria.FrequentlyChanged;
+import pl.symentis.sonar.quadrant.api.criteria.HighComplexityRange;
+import pl.symentis.sonar.quadrant.api.criteria.LowComplexityRange;
+import pl.symentis.sonar.quadrant.api.criteria.RarelyChanged;
+import pl.symentis.sonar.quadrant.core.MetricsDataSource;
 
 @RunWith(Parameterized.class)
 public class QuadrantAreaDetectorParameterizedTest {
@@ -47,13 +57,13 @@ public class QuadrantAreaDetectorParameterizedTest {
   public void shouldJudgeByComplexityRatherThanByName() {
     // given
     MetricsDataSource metricsDataSource = Mockito.mock(MetricsDataSource.class);
-    QuadrantAreaDetector detector = new QuadrantAreaDetector(metricsDataSource);
+    OldQuadrantAreaDetector detector = new OldQuadrantAreaDetector(metricsDataSource);
 
     // when
     when(metricsDataSource.getComplexityFor(accused)).thenReturn(complexity);
     when(metricsDataSource.getChangeRateFor(accused)).thenReturn(changeRate);
     
-    Quadrant chosenQuadrant = detector.detectAreaFor(accused);
+    Quadrant chosenQuadrant = detector.detect(accused);
     
     // then
     assertThat(chosenQuadrant).isEqualTo(expectedQuadrant);

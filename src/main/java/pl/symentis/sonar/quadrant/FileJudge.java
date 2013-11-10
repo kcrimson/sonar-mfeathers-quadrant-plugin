@@ -1,5 +1,5 @@
 package pl.symentis.sonar.quadrant;
 
-public interface ChangeRate {
+public class FileJudge {
 
 }
