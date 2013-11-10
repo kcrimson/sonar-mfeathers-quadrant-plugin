@@ -1,5 +1,13 @@
 package pl.symentis.sonar.quadrant.api.criteria;
 
-public interface ChangeRate {
+/**
+ * We would use lovely inheritance to mark frequently and rarely changed files,
+ * and this will continue to be nice and simple value object.
+ * 
+ * @author Jaroslaw Palka <jaroslaw.palka@symentis.pl>
+ * @author Tomasz Borek <tomasz.borek@gmail.com>
+ * @since 1.0
+ */
+public abstract class ChangeRate {
 
 }

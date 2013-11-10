@@ -8,6 +8,6 @@ package pl.symentis.sonar.quadrant.api.criteria;
  * @author Tomasz Borek <tomasz.borek@gmail.com>
  * @since 1.0
  */
-public class ComplexityRange {
+public abstract class ComplexityRange {
 
 }
