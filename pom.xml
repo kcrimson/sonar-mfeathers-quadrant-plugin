@@ -32,7 +32,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.scm.version>1.8</maven.scm.version>
 		<sonar.pluginName>Michael Feathers Quadrant</sonar.pluginName>
-		<sonar.pluginClass>pl.symentis.sonar.quadrant.QuadrantPlugin</sonar.pluginClass>
+		<sonar.pluginClass>pl.symentis.sonar.quadrant.sonar.QuadrantPlugin</sonar.pluginClass>
 	</properties>
 
 	<dependencies>
